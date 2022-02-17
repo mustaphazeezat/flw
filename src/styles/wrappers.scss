@@ -1,0 +1,53 @@
+.main-wrapper{
+    width: 100%;
+    margin: 0 auto;
+    @media #{ $mobile }{
+        width: 90%;
+    }
+    @media #{ $tablet }{
+        width: 80%;
+    }
+}
+.main-wrapper-y{
+    padding-top: 4rem ;
+    padding-bottom: 4rem;
+    @media #{ $tablet }{
+       padding-top: 6rem;
+       padding-bottom: 6rem;
+    }
+}
+.d-flx-alc{
+    display: flex;
+    align-items: center;
+}
+.d-flx-alc-jsb{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text-w-icon{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+    >*{
+        &:last-child{
+            margin-left: 1rem;
+        }
+    }
+}
+//SCREEN READERS
+.sr:not(:focus):not(:active){
+   position:            absolute;
+   width:               1px;
+   height:              1px;
+   padding:             0;
+   margin:              -1px;
+   border:              0;
+   clip-path:           inset(100%);
+   overflow:            hidden;
+   white-space:         nowrap;
+} 

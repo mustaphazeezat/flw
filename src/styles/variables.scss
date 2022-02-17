@@ -1,0 +1,27 @@
+
+//COLORS
+$black:#2C2C2C ;
+$black-30: #4B4B4B;
+$black-20: #6E6E6E;
+$blue: #1473E6;
+
+//decorations
+$border: 1px solid #F5F5F5;
+$shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+//FONTS
+$ff-body: 'SF Pro body', serif;
+$ff-heading: 'SF Pro bold', serif;
+$ff-medium: 'SF Pro sbold', serif;
+$ff-heavy: 'SF Pro heavy';
+
+// Measures & Widths
+$maxwidth-xl:       1144px;
+
+// Media Queries
+$mobile:          "only screen and (min-width: 425px)";
+$tablet:          "only screen and (min-width: 768px)";
+$laptop:           "only screen and (min-width: 1024px)";
+$llaptop:           "only screen and (min-width: 1280px)";
+$desktop:           "only screen and (min-width: 1440px)";
+

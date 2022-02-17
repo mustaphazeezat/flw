@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "SF Pro bold";
+    src: url('/fonts/SF-Pro-Text-Bold.otf') format('woff');
+}
+@font-face {
+    font-family: "SF Pro body";
+    src: url('/fonts/SF-Pro-Text-Regular.otf') format('woff');
+}
+@font-face {
+    font-family: "SF Pro sbold";
+    src: url('/fonts/SF-Pro-Text-Semibold.otf') format('woff');
+}
+@font-face {
+    font-family: "SF Pro heavy";
+    src: url('/fonts/SF-Pro-Text-Black.otf') format('woff');
+}
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family:  'SF Pro body', serif;
+    color: $black-20;
+    font-size: 1.4rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h2,h3{
+    font-family:  "SF Pro bold";
+}
+p{
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $black-20;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+img{
+    height: auto;
+    object-fit: cover;
+}
+button, a{
+    display: block;
+    font-family: "SF Pro sbold";
+    color: $black-30;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
