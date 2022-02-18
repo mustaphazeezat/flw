@@ -11,7 +11,7 @@ export default {
 <style scoped lang="scss">
 .loader-wrapper{
     width: 100%;
-    height: 70vh;
+    // height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;

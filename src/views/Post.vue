@@ -2,10 +2,10 @@
     <Loader v-if="loading" />
     <article v-else class="post main-wrapper main-wrapper-y">
        <div class="d-flx-alc post__info"> <p class="post__info--author">By Ryan Jackson</p><p class="post__info--date">{{timePast(singlePost.date)}} </p></div>
-       <h2 class="post__title">{{singlePost.title.rendered}}</h2>
+       <h1 class="post__title" v-html="singlePost.title.rendered"></h1>
        <div v-html="singlePost.content.rendered" class="post__content" ></div>
     </article>
-    <more-article :loadingState="loading"></more-article>
+    <more-article></more-article>
 </template>
 
 <script>
@@ -26,17 +26,23 @@ export default {
     components:{
         Loader,
         MoreArticle,
+  },
+    watch: {
+    '$route.path': 'getData'
   },    
   methods: {
     ...mapActions(['getSinglePost']),
+    getData () {
+        this.id = this.$route.params.id;
+       this.getSinglePost(this.id) 
+    },
     readTime,
     timePast,
   },
     computed:{ ...mapGetters(['loading', 'singlePost']),  },
     created(){
        this.id = this.$route.params.id;
-       this.getSinglePost(this.id)
-       
+       this.getSinglePost(this.id) 
     }
 }
 </script>
@@ -73,11 +79,24 @@ export default {
 
         }
     }
-.post__content ::v-deep a{
+.post__content :deep(a){
     display: inline;
     font-family: $ff-body;
 }
-.post__content ::v-deep p{
+.post__content :deep(p){
     margin-bottom: 2rem;
 }
+.post__content :deep(.wp-caption){
+    width: 80% !important;
+    max-width: 510px !important;
+    margin: 5rem auto;
+    img{
+    width: 100% !important;
+    height: 320px ;
+}
+}
+.post__content :deep(h2,h3,h4){
+    color: $black;
+}
+    
 </style>

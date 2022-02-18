@@ -1,6 +1,5 @@
 <template>
   <section class="main-wrapper">
-      <Loader v-show="loadingState" />
       <div class="more">
           <h2 class="more__title">More Articles</h2>
           <ul class="post-list">
@@ -12,25 +11,28 @@
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
-import Loader from './Loader.vue'
 import PostCard from '../components/PostCard.vue'
 
 export default {
     name: "MoreArticle",
+    data(){
+        return{
+            filtered : []
+        }
+    },
     props:{
-        loadingState: Boolean
+        loadingState: Boolean,
+    
     },
     components:{
         PostCard,
-        Loader
     },
     methods: {
-        ...mapActions(['getAllPosts'])
+        ...mapActions(['getFiltered']),
     },
     computed: mapGetters(['newfilteredpost']),
     created(){
-        this.getAllPosts()
-       
+        this.getFiltered()  
     }
 }
 </script>
