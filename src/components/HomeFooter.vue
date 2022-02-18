@@ -5,10 +5,10 @@
         <p class="footer__text">On dasdas, writers earn a living doing what they love. <br/>
           Getting started is easy. Just pay a one time <span>$25 fee</span> and everything is ready to go.</p>
           <button class="footer__btn" @click="handleClick">join us</button>
-          <p class="footer__float">
-            <button class="footer__btn" @click="handleClick">join us</button>
-            <span>at dasdas for $25 fee </span>
-          </p>
+          <button class="footer__float" @click="handleClick">
+            <span class="footer__float--action" >join us</span>
+            <span class="footer__float--text">at dasdas for $25 </span>
+          </button>
     </div>
     
     
@@ -120,18 +120,19 @@ export default {
       align-items: center;
       background: #000;
       color: #fff;
-      span{
+      transition: all 0.3s ease;
+      &--text{
         padding-right: 1rem;
         font-size: 1.6rem;
         display: none;
       }
-      button{
+      &--action{
         padding: 1rem;
         font-size: 1.6rem;
         text-transform: capitalize;
       }
       &:hover{
-        span{
+        .footer__float--text{
           display: block;
         }
       }
