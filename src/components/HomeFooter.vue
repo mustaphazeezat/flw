@@ -5,7 +5,14 @@
         <p class="footer__text">On dasdas, writers earn a living doing what they love. <br/>
           Getting started is easy. Just pay a one time <span>$25 fee</span> and everything is ready to go.</p>
           <button class="footer__btn" @click="handleClick">join us</button>
+          <p class="footer__float">
+            <button class="footer__btn" @click="handleClick">join us</button>
+            <span>at dasdas for $25 fee </span>
+          </p>
     </div>
+    
+    
+
   </footer>
 </template>
 
@@ -26,9 +33,6 @@ export default {
       document.getElementsByTagName("head")[0].appendChild(script);
      
     },
-    //  mounted() {
-    //   console.log(this.show)
-    // },
   methods:{
     handleClick(){
       window.FlutterwaveCheckout({
@@ -68,6 +72,7 @@ export default {
     text-align: center;
     @media #{$tablet}{
       padding: 4rem 0;
+      padding-bottom: 6rem;
     }
     &__title{
       font-family: $ff-body;
@@ -105,6 +110,30 @@ export default {
       color: #fff;
       @media #{$tablet}{
         font-size: 1.8rem;
+      }
+    }
+    &__float{
+      position: fixed;
+      bottom: 5vh;
+      right: 0;
+      display: flex;
+      align-items: center;
+      background: #000;
+      color: #fff;
+      span{
+        padding-right: 1rem;
+        font-size: 1.6rem;
+        display: none;
+      }
+      button{
+        padding: 1rem;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+      }
+      &:hover{
+        span{
+          display: block;
+        }
       }
     }
   }
